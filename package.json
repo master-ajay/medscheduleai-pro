@@ -1,0 +1,46 @@
+{
+    "name": "medscheduleai-pro",
+    "version": "1.0.0",
+    "description": "AI-Powered Healthcare Scheduling Platform",
+    "private": true,
+    "workspaces": [
+      "client",
+      "server",
+      "shared"
+    ],
+    "scripts": {
+      "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+      "dev:client": "npm run dev --workspace=client",
+      "dev:server": "npm run dev --workspace=server",
+      "build": "npm run build --workspace=server && npm run build --workspace=client",
+      "build:client": "npm run build --workspace=client",
+      "build:server": "npm run build --workspace=server",
+      "test": "npm run test --workspace=server && npm run test --workspace=client",
+      "test:client": "npm run test --workspace=client",
+      "test:server": "npm run test --workspace=server",
+      "lint": "npm run lint --workspace=server && npm run lint --workspace=client",
+      "lint:fix": "npm run lint:fix --workspace=server && npm run lint:fix --workspace=client",
+      "clean": "rm -rf client/dist server/dist client/node_modules server/node_modules shared/node_modules node_modules",
+      "setup": "npm install && npm run setup:env",
+      "setup:env": "node scripts/development/setup-env.js"
+    },
+    "devDependencies": {
+      "concurrently": "^7.6.0"
+    },
+    "engines": {
+      "node": ">=18.0.0",
+      "npm": ">=8.0.0"
+    },
+    "keywords": [
+      "healthcare",
+      "scheduling",
+      "ai",
+      "medical",
+      "staff-management",
+      "react",
+      "nodejs",
+      "typescript"
+    ],
+    "author": "Your Name <your.email@example.com>",
+    "license": "MIT"
+  }
